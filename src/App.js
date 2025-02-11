@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { v4 } from 'uuid';
 import './App.css';
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
 		return (
 			<div className='App'>
 				{this.state.monsters.map((monster) => (
-					<h1>{monster.name}</h1>
+					<h1 key={v4()}>{monster.name}</h1> // generated unique key for each item
 				))}
 			</div>
 		);

@@ -22,10 +22,15 @@ class App extends Component {
 					</p>
 					<button
 						onClick={() => {
-							this.setState({
-								name: { firstname: 'Chichie', lastname: 'Kuwanda' },
-							});
-							console.log(this.state);
+							this.setState(
+								(state, props) => {
+									return {
+										...state,
+										name: { ...state.name, firstname: 'Chichie' },
+									};
+								},
+								() => console.log(this.state)
+							);
 						}}
 					>
 						Click

@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import { v4 } from 'uuid';
 import './App.css';
 
 class App extends Component {

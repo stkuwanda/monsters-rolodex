@@ -6,13 +6,18 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			monsters: [
-				{ name: 'Ogre', id: v4() },
-				{ name: 'Giant', id: v4() },
-				{ name: 'Cyclops', id: v4() },
-				{ name: 'Orc', id: v4() },
-			],
+			monsters: [],
 		};
+	}
+
+	componentDidMount() {
+		const getUsers = async (url) => {
+			const response = await fetch(url);
+			const result = await response.json();
+			this.setState((state, props) => ({ ...state, monsters: result }), () => console.log(this.state));
+		}
+
+		getUsers('https://jsonplaceholder.typicode.com/users');
 	}
 
 	render() {

@@ -6,7 +6,12 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			monsters: [{ name: 'Ogre' }, { name: 'Giant' }, { name: 'Cyclops' }, {name: 'Orc'}],
+			monsters: [
+				{ name: 'Ogre', id: v4() },
+				{ name: 'Giant', id: v4() },
+				{ name: 'Cyclops', id: v4() },
+				{ name: 'Orc', id: v4() },
+			],
 		};
 	}
 
@@ -14,7 +19,9 @@ class App extends Component {
 		return (
 			<div className='App'>
 				{this.state.monsters.map((monster) => (
-					<h1 key={v4()}>{monster.name}</h1> // generated unique key for each item
+					<div key={monster.id}>
+						<h1>{monster.name}</h1>
+					</div>
 				))}
 			</div>
 		);

@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './App.css';
 import './components/search-box/search-box.style.css';
 import './components/card-list/card-list.style.css';
+import './components/card/card.style.css';
 import CardList from './components/card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
 

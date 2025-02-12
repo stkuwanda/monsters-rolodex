@@ -1,6 +1,4 @@
-const Card = (props) => {
-	const { className, name, email, src } = props;
-
+const Card = ({ className, name, email, src }) => {
 	return (
 		<div className={className}>
 			<img src={src} alt={`monster ${name}`} />
